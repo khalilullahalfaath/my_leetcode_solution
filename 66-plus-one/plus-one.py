@@ -4,20 +4,11 @@ class Solution(object):
         :type digits: List[int]
         :rtype: List[int]
         """
-        index = len(digits)
-        total = 0
+        # Convert list of digits to an integer
+        total = int("".join(map(str, digits))) + 1
 
-        # get the total value
-        for i in range(len(digits)): 
-            total = total + (digits[i] * (10**(index-1)))
-            index -= 1
-
-        # add one
-        total = total + 1
-
-        res = [int(digit) for digit in str(total)]
-
-        return res
+        # Convert integer back to list of digits
+        return list(map(int, str(total)))
 
 
 
